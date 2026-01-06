@@ -25,14 +25,14 @@ body {
     font-family: Arial, sans-serif;
     color: var(--text-main);
 
-    background:
-        radial-gradient(
-            circle at top,
-            #1e293b 0%,
-            var(--bg-dark) 65%
-        );
-        
+    background: radial-gradient(
+        circle at top,
+        #1e293b 0%,
+        var(--bg-dark) 65%
+    );
 }
+
+/* ================= HEADER ================= */
 
 /* ===== HEADER ===== */
 header {
@@ -48,8 +48,6 @@ header {
 
     border: 1px solid var(--glass-border);
     border-radius: 999px;
-
-    position: relative;
 }
 
 /* ===== NAV ===== */
@@ -61,7 +59,7 @@ nav {
 }
 
 /* ===== LINKS ===== */
-a {
+nav a {
     color: var(--text-main);
     text-decoration: none;
 
@@ -71,7 +69,7 @@ a {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-a:hover {
+nav a:hover {
     background: rgba(59, 130, 246, 0.15);
     transform: translateY(-2px);
 }
@@ -103,7 +101,7 @@ a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ===== GLOW DE CONEXÃO ===== */
+/* ===== GLOW DO BOTÃO ===== */
 #bot::before {
     content: "";
     position: absolute;
@@ -121,7 +119,7 @@ a:hover {
     z-index: -1;
 }
 
-/* ===== INTERAÇÕES ===== */
+/* ===== INTERAÇÕES DO BOTÃO ===== */
 #bot:hover {
     transform: scale(1.08);
     box-shadow:
@@ -131,4 +129,85 @@ a:hover {
 
 #bot:active {
     transform: scale(0.95);
+}
+
+/* ================= HERO ================= */
+
+/* ===== CONTAINER HERO ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 1000px;
+    margin: 80px auto 0;
+    gap: 40px;
+}
+
+/* ===== IMAGEM DO HERO ===== */
+#ima {
+    width: 420px;
+    max-width: 100%;
+    height: auto;
+
+    filter: drop-shadow(0 0 35px rgba(99, 102, 241, 0.35));
+    transition: transform 0.3s ease;
+}
+
+#ima:hover {
+    transform: scale(1.03);
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 520px;
+}
+
+/* Olá, eu sou o */
+.text h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Nome */
+.nome {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #22d3ee
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+/* Parágrafo */
+.paragrafo {
+    margin-top: 14px;
+
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cbd5f5;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.click{
+    border-radius: 999px;
+    color: white;
+    background-color: blue;
 }
