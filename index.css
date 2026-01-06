@@ -77,6 +77,7 @@ nav a:hover {
 /* ===== BOTÃO PRINCIPAL ===== */
 #bot {
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
 
     margin-left: auto;
     margin-right: 10px;
@@ -92,16 +93,19 @@ nav a:hover {
     );
 
     border: none;
+    text-decoration: none;
 
     box-shadow:
         0 0 20px rgba(59, 130, 246, 0.6),
         inset 0 0 8px rgba(255, 255, 255, 0.15);
 
     position: relative;
+    display: inline-block;
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ===== GLOW DO BOTÃO ===== */
+/* ===== GLOW ===== */
 #bot::before {
     content: "";
     position: absolute;
@@ -119,7 +123,7 @@ nav a:hover {
     z-index: -1;
 }
 
-/* ===== INTERAÇÕES DO BOTÃO ===== */
+/* ===== HOVER ===== */
 #bot:hover {
     transform: scale(1.08);
     box-shadow:
@@ -127,6 +131,7 @@ nav a:hover {
         inset 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
+/* ===== CLICK ===== */
 #bot:active {
     transform: scale(0.95);
 }
@@ -206,8 +211,70 @@ nav a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.click{
+.contrata-me {
+    display: inline-block;
+    text-align: center;
+
+    margin-top: 26px;
+
+    padding: 12px 28px;
     border-radius: 999px;
-    color: white;
-    background-color: blue;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border: none;
+
+    box-shadow:
+        0 8px 25px rgba(59, 130, 246, 0.45),
+        inset 0 0 6px rgba(255, 255, 255, 0.15);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* hover elegante */
+.contrata-me:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 14px 40px rgba(34, 211, 238, 0.65),
+        inset 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* clique */
+.contrata-me:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+
+.banana{
+    display: flex;
+    border-radius: 10px 10px 10px 10px;
+    width: 500px;
+    padding: auto;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+}
+
+.project{
+    color: black;
 }
