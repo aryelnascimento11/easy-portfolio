@@ -15,18 +15,23 @@
     --text-main: #e5e7eb;
 }
 
-/* header */
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--text-main);
+    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 65%);
+}
+
+/* ===== HEADER ===== */
 header {
     display: flex;
     align-items: center;
-
     width: 1000px;
     margin: 20px auto 0;
     padding: 10px 18px;
-
     background: var(--glass);
     backdrop-filter: blur(14px);
-
     border: 1px solid var(--glass-border);
     border-radius: 999px;
 }
@@ -54,15 +59,11 @@ nav a:hover {
 #bot {
     margin-left: auto;
     padding: 8px 22px;
-
     border-radius: 999px;
     border: none;
-
     color: white;
     text-decoration: none;
-
     cursor: pointer;
-
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -75,14 +76,6 @@ nav a:hover {
 
 #bot:active {
     transform: scale(0.95);
-}
-
-/* ===== BODY ===== */
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: var(--text-main);
-    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 65%);
 }
 
 /* ===== HERO ===== */
@@ -128,8 +121,9 @@ body {
     color: #cbd5f5;
 }
 
-/* ===== BOTÃO ===== */
+/* ===== BOTÃO HERO ===== */
 .contrata-me {
+    text-align: center;
     display: inline-block;
     margin-top: 26px;
     padding: 12px 28px;
@@ -137,7 +131,6 @@ body {
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     box-shadow: 0 10px 30px rgba(59, 130, 246, .45);
     transition: transform .25s ease, box-shadow .25s ease;
@@ -148,7 +141,7 @@ body {
     box-shadow: 0 16px 45px rgba(34, 211, 238, .65);
 }
 
-/* ===== IMAGEM ===== */
+/* ===== HERO IMAGE ===== */
 #ima {
     width: 420px;
     filter: drop-shadow(0 0 35px rgba(99, 102, 241, .35));
@@ -164,7 +157,6 @@ body {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 50px;
-
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -180,19 +172,19 @@ body {
 /* ===== CARD ===== */
 .banana {
     display: flex;
+    flex-direction: column; /* imagem em cima, texto embaixo */
+    align-items: center;
+    justify-content: flex-start;
     width: 300px;
-    height: 400px;
+    height: 350px;
     padding: 25px;
-    justify-content: center;
-
     background: var(--glass);
     backdrop-filter: blur(14px);
-
     border-radius: 18px;
     border: 1px solid var(--glass-border);
-
     box-shadow: 0 0 25px rgba(59, 130, 246, .25);
     transition: transform .3s ease, box-shadow .3s ease;
+    overflow: hidden;
 }
 
 .banana:hover {
@@ -200,9 +192,76 @@ body {
     box-shadow: 0 0 40px rgba(59, 130, 246, .45);
 }
 
-.imagem1 {
-    padding: auto;
-    width: auto;
+/* ===== IMAGEM DENTRO DO CARD ===== */
+.imagem1, .imagem2, .imagem3 {
     display: block;
-    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px; /* espaçamento entre imagem e texto */
 }
+
+/* ===== TEXTO DO CARD ===== */
+.bloco {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.next{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.page{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.paragrafo1{   
+    gap: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao1 {
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px 22px;
+    border-radius: 999px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao1:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(34, 211, 238, 0.9);
+}
+
+.botao1:active {
+    transform: scale(0.95);
+}
+
+
