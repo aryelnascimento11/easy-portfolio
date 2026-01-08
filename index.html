@@ -1,80 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="index.css">
-   <title>Meu Portifólio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-   <header>
-      <nav>
-         <a href="">Inicio</a>
-         <a href="">Sobre</a>
-         <a href="">Projetos</a>
-         <a href="">Contatos</a>
-      </nav>
-      <a  href="./img/image-removebg-preview (1).png" download="" id="bot">
-       Meu CV
-      </a>
-   </header>
 
+<header>
+  <nav>
+    <a href="#" data-i18n="inicio">Inicio</a>
+    <a href="./project.html" data-i18n="sobre">Sobre</a>
+    <a href="https://github.com/aryelnascimento11" data-i18n="projetos">Git Hub</a>
 
-<section>
+    <!-- Seletor de idioma -->
+    <select id="lang-switch">
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+    </select>
+  </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="text">
-      <h3>Olá, eu sou o</h3>
-      <h1 class="nome">Aryel Nascimento</h1>
-      <h2 class="subtitulo">Desenvolvedor Web</h2>
+  <a href="./files/Currículo (2).pdf" download id="bot">
+    Meu CV
+  </a>
+</header>
 
-      <p class="paragrafo">
-        Focado em criar experiências digitais limpas, responsivas e performáticas,
-        utilizando Next.js, HTML, CSS e JavaScript.
-      </p>
+<!-- HERO -->
+<section class="hero">
+  <div class="text">
+    <h3 data-i18n="ola">Olá, eu sou o</h3>
+    <h1 class="nome">Aryel Nascimento</h1>
+    <h2 class="subtitulo" data-i18n="cargo">Desenvolvedor Web</h2>
 
-      <a
-        class="contrata-me"
-        href="https://wa.me/5547992472537?text=Ol%C3%A1%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Contrate-me
-      </a>
-    </div>
+    <p class="paragrafo" data-i18n="descricao">
+      Focado em criar experiências digitais limpas, responsivas e performáticas,
+      utilizando Next.js, HTML, CSS e JavaScript.
+    </p>
 
-    <img
-      id="ima"
-      src="./img/image-removebg-preview (1).png"
-      alt="Ilustração desenvolvedor"
+    <a
+      class="contrata-me"
+      href="https://wa.me/5547992472537?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+      target="_blank"
     >
+      <span data-i18n="contrate">Contrate-me</span>
+    </a>
   </div>
-  <section class="projects">
-    <h1 class="projects-title">Meus Projetos</h1>
 
-    <div class="projects-grid">
-      <div class="banana">
-        <img class="imagem1" src="./img/imagem1.png" alt="">
-        <h1 class="bloco">Bloco de Notas</h1>
-        <p class="paragrafo1">Projeto criado durante meus primeiros estudos com Next.js, focado em construção de componentes reutilizáveis e estilização com Tailwind CSS.</p>
-        <button class="botao1">Ver mais</button>
-      </div>
-      <div class="banana">
-        <img class="imagem2" src="img/imagem2.png" alt="">
-        <h1 class="next">Next.js Componentes</h1>
-      </div>
-      <div class="banana">
-        <img class="imagem3" src="./img/imagem3.png" alt="">
-        <h1 class="page">Landing Page</h1>
-      </div>
-    </div>
-  </section>
-
+  <img id="ima" src="./img/image-removebg-preview (1).png" alt="Dev Illustration">
 </section>
 
-</body>
+<!-- PROJETOS -->
+<section class="projects">
+  <h1 class="projects-title" data-i18n="meusProjetos">Meus Projetos</h1>
 
+  <div class="projects-grid">
+    <div class="banana">
+      <img class="imagem" src="./img/imagem1.png" alt="">
+      <h2>Bloco de Notas</h2>
+      <p>Bloco de notas avançado com DOM, personalização visual e gerenciamento de anotações.</p>
+      <a class="botao1" href="https://bloco-de-notas-eight.vercel.app/" target="_blank">Ver mais</a>
+    </div>
+
+    <div class="banana">
+      <img class="imagem" src="./img/imagem2.png" alt="">
+      <h2>Next.js Componentes</h2>
+      <p>Projeto focado em componentes reutilizáveis e estilização moderna.</p>
+      <a class="botao1" href="https://project-componentes.vercel.app/" target="_blank">Ver mais</a>
+    </div>
+
+    <div class="banana">
+      <img class="imagem" src="./img/imagem3.png" alt="">
+      <h2>Landing Page</h2>
+      <p>Primeira landing page em Next.js com deploy na Vercel.</p>
+      <a class="botao1" href="https://eliti-next-page-aryel.vercel.app/" target="_blank">Ver mais</a>
+    </div>
+  </div>
+</section>
+
+<script src="lang.js"></script>
+</body>
 </html>
