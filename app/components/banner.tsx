@@ -6,7 +6,7 @@ import { FaRegPlayCircle } from "react-icons/fa";
 export default function Banner() {
     return (
         <main>
-            <section>
+            <section className="flex flex-col md:flex-row items-center justify-between gap-10 bg-gray-100 py-20 px-10 md:px-20">
                 <div className="flex flex-col gap-4 mt-10 px-20">
                     <p className="flex items-center gap-1 text-blue-500"><FaRegPlayCircle /> DESENVOLVIMENTO WEB</p>
                     <h1 className="text-4xl font-bold text-gray-800">
@@ -22,8 +22,8 @@ export default function Banner() {
                             <MdArrowForward /></a>
                         <a className="flex items-center gap-1 text-blue-500" href="/"><MdOutlineMail /> Entrar em contato</a>
                     </div>
-                </div>
-                <img src="/banner.png" alt="Banner" />
+                </div>         
+                <img className="w-100 h-100 object-cover" src="./image/banner.png" alt="Banner" />
             </section>
         </main>
     )
