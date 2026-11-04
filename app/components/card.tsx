@@ -4,12 +4,14 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 import { RiSupabaseFill } from "react-icons/ri";
 
+import { useState } from "react";
 
 
 import Image from "next/image";
 
 
 export default function Card() {
+    const [atualizar, setAtualizar] = useState(false);
     return (
         <main>
             <section className="flex flex-wrap justify-center gap-4">
@@ -33,6 +35,13 @@ export default function Card() {
                         </div>
                     </div>
                     <p className="text-xl"><MdArrowOutward /></p>
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg" onClick={() => setAtualizar(!atualizar)}>Atualizar</button>
+                    {atualizar && (
+                        <section className="bg-white text-black p-4 rounded-lg mt-4">
+                            <h2>Minha seção</h2>
+                            <p>meu conteudo</p>
+                        </section>
+                    )}
                 </div>
                 <div className="bg-blue-500 flex w-92 m-4 rounded-lg items-start justify-between border border-black py-6 px-4 ">
 
