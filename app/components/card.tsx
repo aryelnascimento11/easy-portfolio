@@ -14,6 +14,7 @@ export default function Card() {
     const [atualizar, setAtualizar] = useState(false);
     return (
         <main>
+
             <section className="flex flex-wrap justify-center gap-4">
                 <div className="bg-blue-500 flex w-92 m-4 rounded-lg items-start justify-between border border-black py-6 px-4 ">
 
@@ -36,10 +37,11 @@ export default function Card() {
                     </div>
                     <p className="text-xl"><MdArrowOutward /></p>
                     <button className="bg-blue-500 text-white px-4 py-2 rounded-lg" onClick={() => setAtualizar(!atualizar)}>Atualizar</button>
-                    {atualizar && (
-                        <section className="bg-white text-black p-4 rounded-lg mt-4">
+                                {atualizar && (
+                        <section className="bg-white fixed inset-0 z-50 items-center justify-center text-black p-4 rounded-lg mt-4 aling-center">
                             <h2>Minha seção</h2>
                             <p>meu conteudo</p>
+                            <button onClick={() => setAtualizar(false)}>Fechar</button>
                         </section>
                     )}
                 </div>
