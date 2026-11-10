@@ -1,29 +1,50 @@
 
-import Link from "next/dist/client/link";
+"use client";
+
+import Link from "next/link";
 import { CiSettings } from "react-icons/ci";
 import { MdArrowForward } from "react-icons/md";
-
+import { motion } from "motion/react";
 
 export default function Header() {
     return (
-        <header className="border-b border-black">
-            <nav className="flex justify-between items-center py-4 px-8 bg-white text-white">
-                <Link className="font-bold text-xl text-blue-700" href="/">Aryel <span className="text-blue-500">Nascimento</span></Link>
-                <div className="flex items-center gap-4 text-blue-500">
-                    <Link href="/">Home</Link>
-                    <Link href="/projects">Projects</Link>
-                    <Link href="/about">About</Link>
-                    <Link href="/contact">Contact</Link>
-                </div>
-                <div className="flex items-center gap-4">
-                    <CiSettings className="text-blue-500" />
-                    <a className=" inline-flex items-center gap-2 bg-blue-500 text-white rounded-lg px-3 py-2 cursor-pointer hover:bg-blue-600 transition-colors duration-300">
-                        <span>Fale comigo</span>
-                        <MdArrowForward />
-                    </a>
-                </div>
-            </nav>
+        <motion.header
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl"
+        >
+            <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
 
-        </header>
-    )
+                <Link href="/" className="text-xl font-bold tracking-tight text-slate-900">
+                    ARYEL<span className="text-blue-600">.DEV</span>
+                </Link>
+
+                <div className="hidden items-center gap-9 text-sm font-medium text-slate-500 md:flex">
+                    <Link className="transition-colors hover:text-blue-600" href="/">Início</Link>
+                    <Link className="transition-colors hover:text-blue-600" href="/projects">Projetos</Link>
+                    <Link className="transition-colors hover:text-blue-600" href="/about">Sobre</Link>
+                    <Link className="transition-colors hover:text-blue-600" href="/contact">Contato</Link>
+                </div>
+
+                <div className="flex items-center gap-4">
+                    <button
+                        aria-label="Configurações"
+                        className="text-xl text-slate-500 transition hover:rotate-45 hover:text-blue-600"
+                    >
+                        <CiSettings />
+                    </button>
+
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
+                    >
+                        Fale comigo
+                        <MdArrowForward />
+                    </Link>
+                </div>
+
+            </nav>
+        </motion.header>
+    );
 }
