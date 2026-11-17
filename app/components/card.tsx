@@ -40,17 +40,17 @@ const projects: Project[] = [
         id: 2,
         title: "Mestre Barbeiro",
         description: "Site de barbearia com apresentação de serviços e agendamento.",
-        image: "/image/mestre-barbeiro.png",
+        image: "/image/barbeiro.png",
         category: "Projeto demonstrativo",
-        technologies: ["Next.js", "Tailwind", "JavaScript"],
+        technologies: ["Html", "Css", "JavaScript"],
         details: "Uma experiência digital para apresentar os serviços, informações e identidade de uma barbearia.",
         challenge: "Organizar as informações de maneira visual e facilitar o acesso dos clientes aos serviços.",
     },
     {
         id: 3,
-        title: "Next.js Components",
+        title: "Bloco de Notas",
         description: "Estudos e experimentos com componentes e interfaces.",
-        image: "/image/components.png",
+        image: "/image/Bloco.png",
         category: "Projeto pessoal",
         technologies: ["Next.js", "React", "TypeScript"],
         details: "Projeto criado para praticar composição de componentes e organização de interfaces.",
@@ -109,7 +109,7 @@ export default function Card() {
                     </div>
 
                     <a
-                        href="/projects"
+                        href="https://github.com/aryelnascimento11?tab=repositories"
                         className="hidden items-center gap-2 text-sm font-semibold text-blue-600 transition hover:gap-3 sm:flex"
                     >
                         Ver todos
