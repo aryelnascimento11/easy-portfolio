@@ -63,7 +63,8 @@ export default function Header() {
                         <h2 className="text-lg font-bold text-slate-900">Configurações</h2>
                         <button
                             aria-label="Fechar configurações"
-                            className="cursor-pointer text-xl text-slate-500 transition hover:text-blue-600"
+                            className="cursor-pointer
+                             text-xl text-slate-500 transition hover:text-blue-600"
                             onClick={() => setConfig(false)}
                         >
                             <IoClose />
