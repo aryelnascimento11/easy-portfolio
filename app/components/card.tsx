@@ -5,12 +5,21 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MdArrowOutward, MdClose, MdArrowForward } from "react-icons/md";
-import {
-    SiNextdotjs,
-    SiJavascript,
-    SiReact,
-    SiSupabase,
-} from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
+import { FaReact } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
+import { FaHtml5 } from "react-icons/fa6";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { RiSupabaseFill } from "react-icons/ri";
+import { FaNode } from "react-icons/fa";
+
+
+
+
+
+
+
 
 type Project = {
     id: number;
@@ -42,27 +51,20 @@ const projects: Project[] = [
         description: "Site de barbearia com apresentação de serviços e agendamento.",
         image: "/image/barbeiro.png",
         category: "Projeto demonstrativo",
-        technologies: ["Html", "Css", "JavaScript"],
+        technologies: ["Next.js", "Tailwind", "JavaScript"],
         details: "Uma experiência digital para apresentar os serviços, informações e identidade de uma barbearia.",
         challenge: "Organizar as informações de maneira visual e facilitar o acesso dos clientes aos serviços.",
     },
     {
         id: 3,
-        title: "Bloco de Notas",
+        title: "Next.js Components",
         description: "Estudos e experimentos com componentes e interfaces.",
-        image: "/image/Bloco.png",
+        image: "/image/bloco.png",
         category: "Projeto pessoal",
         technologies: ["Next.js", "React", "TypeScript"],
         details: "Projeto criado para praticar composição de componentes e organização de interfaces.",
         challenge: "Desenvolver componentes reutilizáveis e manter uma estrutura organizada.",
     },
-];
-
-const technologies = [
-    { name: "Next.js", icon: SiNextdotjs, color: "text-slate-900" },
-    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
-    { name: "React", icon: SiReact, color: "text-sky-500" },
-    { name: "Supabase", icon: SiSupabase, color: "text-emerald-500" },
 ];
 
 export default function Card() {
@@ -89,7 +91,6 @@ export default function Card() {
 
     return (
         <main className="bg-white px-6 py-20 lg:px-10">
-
             <div className="mx-auto max-w-7xl">
 
                 {/* Título */}
@@ -109,7 +110,7 @@ export default function Card() {
                     </div>
 
                     <a
-                        href="https://github.com/aryelnascimento11?tab=repositories"
+                        href="/projects"
                         className="hidden items-center gap-2 text-sm font-semibold text-blue-600 transition hover:gap-3 sm:flex"
                     >
                         Ver todos
@@ -119,7 +120,6 @@ export default function Card() {
 
                 {/* Cards */}
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.id}
@@ -131,7 +131,6 @@ export default function Card() {
                             whileHover={{ y: -7 }}
                             className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-200/70"
                         >
-
                             <button
                                 onClick={() => setProjetoSelecionado(project)}
                                 className="block w-full text-left"
@@ -156,7 +155,6 @@ export default function Card() {
                                 </div>
 
                                 <div className="p-5">
-
                                     <div className="flex items-center justify-between">
                                         <h3 className="text-lg font-bold text-slate-900">
                                             {project.title}
@@ -179,48 +177,11 @@ export default function Card() {
                                             </span>
                                         ))}
                                     </div>
-
                                 </div>
                             </button>
                         </motion.article>
                     ))}
-
                 </div>
-
-                {/* Tecnologias */}
-                <section className="mt-24 border-t border-slate-200 pt-10">
-
-                    <div className="mb-7">
-                        <p className="text-xs font-bold tracking-[0.16em] text-blue-600">
-                            FERRAMENTAS
-                        </p>
-
-                        <h2 className="mt-2 text-2xl font-bold text-slate-900">
-                            Minhas tecnologias
-                        </h2>
-
-                        <p className="mt-2 text-sm text-slate-500">
-                            Tecnologias que utilizo no desenvolvimento dos meus projetos.
-                        </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-8">
-                        {technologies.map((tech) => {
-                            const Icon = tech.icon;
-
-                            return (
-                                <div
-                                    key={tech.name}
-                                    className="flex items-center gap-3 text-sm font-semibold text-slate-700"
-                                >
-                                    <Icon className={`text-2xl ${tech.color}`} />
-                                    {tech.name}
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                </section>
             </div>
 
             {/* Modal de detalhes */}
@@ -238,7 +199,6 @@ export default function Card() {
                         }}
                     >
                         <motion.div
-                            layoutId={`project-image-${projetoSelecionado.id}`}
                             initial={{ opacity: 0, y: 35, scale: 0.96 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 25, scale: 0.97 }}
@@ -248,7 +208,6 @@ export default function Card() {
                             aria-labelledby="project-title"
                             className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto rounded-2xl bg-white shadow-2xl"
                         >
-
                             <button
                                 onClick={() => setProjetoSelecionado(null)}
                                 aria-label="Fechar detalhes"
@@ -258,9 +217,7 @@ export default function Card() {
                             </button>
 
                             <div className="grid md:grid-cols-[1.4fr_1fr]">
-
                                 <div className="p-6 sm:p-9">
-
                                     <p className="text-xs font-bold tracking-widest text-blue-600">
                                         {projetoSelecionado.category.toUpperCase()}
                                     </p>
@@ -309,7 +266,6 @@ export default function Card() {
                                 </div>
 
                                 <aside className="border-t border-slate-200 bg-slate-50/80 p-6 sm:p-9 md:border-l md:border-t-0">
-
                                     <h3 className="text-lg font-bold text-slate-900">
                                         Sobre o projeto
                                     </h3>
@@ -354,13 +310,76 @@ export default function Card() {
                                     >
                                         Voltar aos projetos
                                     </button>
-
                                 </aside>
                             </div>
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <section className="mx-auto max-w-7xl px-6 py-20">
+
+                <div className="mb-8">
+                    <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
+                        Tecnologias
+                    </p>
+
+                    <h1 className="mt-2 text-3xl font-bold text-slate-900">
+                        Minhas tecnologias
+                    </h1>
+
+                    <p className="mt-2 text-sm text-slate-500">
+                        As tecnologias que utilizo em meus projetos.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <SiNextdotjs className="text-2xl text-slate-900" />
+                        <h2 className="font-semibold text-slate-700">Next.js</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <FaReact className="text-2xl text-sky-500" />
+                        <h2 className="font-semibold text-slate-700">React</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <IoLogoJavascript className="text-2xl text-yellow-500" />
+                        <h2 className="font-semibold text-slate-700">JavaScript</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <SiTypescript className="text-2xl text-blue-600" />
+                        <h2 className="font-semibold text-slate-700">TypeScript</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <FaHtml5 className="text-2xl text-orange-600" />
+                        <h2 className="font-semibold text-slate-700">HTML</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <RiTailwindCssFill className="text-2xl text-cyan-500" />
+                        <h2 className="font-semibold text-slate-700">Tailwind CSS</h2>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                        <RiSupabaseFill className="text-2xl text-emerald-500" />
+                        <h2 className="font-semibold text-slate-700">Supabase</h2>
+                    </div>
+                    <div>
+                        <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100">
+                            <FaNode className="text-2xl text-green-600" />
+                            <h2 className="font-semibold text-slate-700">Node.js</h2>
+                        </div>
+                    </div>
+                
+            
+                    </div>
+                
+            </section>
 
         </main>
     );
